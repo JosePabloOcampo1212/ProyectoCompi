@@ -68,8 +68,8 @@ class Explorador:
         '''
         componentes = []
         tamanoLinea = len(linea)
-        posicionFinal = 0
         posicionInicial = 0
+        posicionFinal = 0
 
         # Toma una línea y le va cortando pedazos hasta que se acaba
         while(posicionFinal != tamanoLinea):
@@ -82,7 +82,7 @@ class Explorador:
                 respuesta = re.match(regex, pos)
                 # Si hay coincidencia se procede a generar el componente
                 # léxico final
-                if respuesta is not None :
+                if respuesta != None :
                     posicionFinal += respuesta.end()
 
                     descripcion = ""
