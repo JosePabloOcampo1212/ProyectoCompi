@@ -102,7 +102,7 @@ class Explorador:
 
                     elif tipo_componente is TipoComponente.ERROR:
                         if respuesta.end() == 0: posicionFinal += 1
-                        descripcion = "Se detecto un error en  " +respuesta.group( ) +" (escriba bien >:v)"
+                        descripcion = "Se detecto un error en  " +respuesta.group( ) +" CORREGIR"
 
                     # Si no coincide a un error y no es un blanco ni comentario, se manda a traer la descripcion de DescripcionComponente
                     elif tipo_componente is not TipoComponente.BLANCOS and \

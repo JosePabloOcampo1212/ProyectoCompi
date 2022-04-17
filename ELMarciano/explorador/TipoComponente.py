@@ -6,6 +6,36 @@ class TipoComponente(Enum):
 
     Esta clase tiene mayormente un propósito de validación
     """
+    PROGRAMA = auto()
+    COMENTARIO = auto()
+    ASIGNACION = auto()
+    IDENTIFICADOR = auto()
+    TEXTO = auto()
+    ENTERO = auto()
+    FLOTANTE = auto()
+    EXPRESION_MATE = auto()
+    LITERAL = auto()
+    FUNCION = auto()
+    INSTRUCCION = auto()
+    REPETICION = auto()
+    CONDICION = auto()
+    COMPARACION = auto()
+    COMPARADOR = auto()
+    VALOR_VERDAD = auto()
+    OPERADOR_LOGICO = auto()
+    O = auto()
+    Y = auto()
+    OPERADOR_MATEMATICO = auto()
+    BIFURCACION = auto()
+    SI = auto()
+    TALVEZ = auto()
+    SINO = auto()
+    RETORNO = auto()
+    ERROR = auto()
+    AMBIENTE_ESTANDAR = auto() #Convertir / Print / Concatenar / Ingresar ::= <<
+
+    
+    """
     COMENTARIO = auto()
     PALABRA_CLAVE = auto()
     CONDICIONAL = auto()
@@ -26,3 +56,4 @@ class TipoComponente(Enum):
     ERRORFLOTANTE = auto()
     ERRORVARIABLE = auto()
     ERROR = auto()
+    """

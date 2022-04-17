@@ -7,13 +7,13 @@ class DescripcionComponente:
 
     Algunos tipos de lexema que pueden ser muy distintos entre si mismos se les da una descripcion generica, mientras que los que siempre son iguales uno especifico
     """
-    def evaluar_token(mitoken, mi_componente):
+    def evaluar_token(mitoken, componente):
         AtributosComponente = {
 
             '^': 'equivalente a While',
             '?': 'Si condicional',
             '?:': 'Si Tal Vez',
-            ':': 'No condicional',
+            ':': 'else condicional',
             '&&': 'equivalente a and',
             '||': 'equivalente a or',
             'T': 'equivalente a True',
@@ -31,25 +31,26 @@ class DescripcionComponente:
             '>=':'Mayor o igual comparativo',
             '_': 'imprime cualquier variable o texto ',
             '++': 'Este te concatena 2 textos',
-            '+--+':'Entrada por medio de consola',
+            '<<':'Entrada por medio de consola',
             '>>': 'Retorno un valor',
-            '-->': 'Inicio de funcion.',
-            'fin': 'Fin de la funcion.',
+            '-->': 'Declara funcion.',
+            '{': 'Inicio de funcion.',
+            '}': 'Fin de la funcion.',
         }
         """
         Revisa que el token exista en la lista, en caso de ser variables o identificadores
         retorna el mismo mensaje.
         """
         if mitoken not in AtributosComponente:
-            if mi_componente is TipoComponente.IDENTIFICADOR:
+            if componente is TipoComponente.IDENTIFICADOR:
                 return 'Esto es un identificador'
-            if mi_componente is TipoComponente.TEXTO:
+            if componente is TipoComponente.TEXTO:
                 return 'Esto es un texto'
-            if mi_componente is TipoComponente.ENTERO:
+            if componente is TipoComponente.ENTERO:
                 return 'Esto es un numero entero'
-            if mi_componente is TipoComponente.PUNTUACION:
+            if componente is TipoComponente.PUNTUACION:
                 return 'Esto es un simbolo del sistema'
-            if mi_componente is TipoComponente.FLOTANTE:
+            if componente is TipoComponente.FLOTANTE:
                 return 'Esto es un flotante'
             return 'Identificadores o variables'
         # si el token si existe, busco y traigo el atributo.

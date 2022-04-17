@@ -23,8 +23,7 @@ class ComponenteLéxico:
     def __str__(self):
         """
         Da una representación en texto de la instancia actual usando un
-        string de formato de python (ver 'python string formatting' en
-        google)
+        string de formato de python
         """
 
         resultado = f'{self.tipo:30} <{self.texto:20}> ({self.atributos_adicionales})'
