@@ -13,7 +13,7 @@ class Explorador:
     def __init__(self, contenido_archivo):
         self.texto = contenido_archivo
         self.componentes = []
-        self.tipoErrores = [TipoComponente.LACTEO, TipoComponente.ERRORENCAPSULACION, TipoComponente.ERRORFLOTANTE, TipoComponente.ERRORVARIABLE, TipoComponente.ERROR]
+        self.tipoErrores = [TipoComponente.ERROR]
         self.errores = []
 
     def explorar(self):
