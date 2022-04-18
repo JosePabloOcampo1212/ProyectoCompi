@@ -24,13 +24,10 @@ def marciano():
 		archivo = open(args.archivo,"r")
 		exp = Explorador(archivo)
 		exp.explorar()
-		exp.imprimir_componentes()
-		# print(readText(archivo))
-
-		# if exp.tiene_errores():
-		# 	exp.imprimir_errores()
-		# else:
-		# 	exp.imprimir_componentes()
+		if exp.tiene_errores():
+			exp.imprimir_errores()
+		else:
+			exp.imprimir_componentes()
 
 if __name__ == '__main__':
 	marciano()
