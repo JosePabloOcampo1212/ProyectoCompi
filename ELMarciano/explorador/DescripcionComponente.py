@@ -1,4 +1,4 @@
-from explorador import TipoComponente
+from explorador.TipoComponente import TipoComponente
 
 
 class DescripcionComponente:

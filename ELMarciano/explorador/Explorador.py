@@ -1,4 +1,8 @@
-from explorador import DescriptoresComponentes, TipoComponente, DescripcionComponente
+import re
+
+from explorador.DescriptoresComponentes import DescriptoresComponentes
+from explorador.TipoComponente import TipoComponente
+from explorador.DescripcionComponente import DescripcionComponente
 from explorador.AtributosComponente import AtributosComponente
 from explorador.ComponenteLéxico import ComponenteLéxico
 
@@ -13,7 +17,7 @@ class Explorador:
     def __init__(self, contenido_archivo):
         self.texto = contenido_archivo
         self.componentes = []
-        self.tipoErrores = [TipoComponente.ERROR]
+        self.tipoErrores = [TipoComponente.ERROR_ENCAPSULACION, TipoComponente.ERROR]
         self.errores = []
 
     def explorar(self):
@@ -88,30 +92,21 @@ class Explorador:
                     descripcion = ""
 
                     # Se declara una descripcion para atributos adicionales y primero se compara con errores
-                    if  tipo_componente is TipoComponente.LACTEO:
-                        descripcion = ">>Error: Se fue en kk por usar  " +respuesta.group()
-
-                    elif tipo_componente is TipoComponente.ERRORFLOTANTE :
-                        descripcion = ">>Error: El flotante  " +respuesta.group( ) +" esta mal escrito"
-
-                    elif tipo_componente is TipoComponente.ERRORVARIABLE :
-                        descripcion = ">>Error: El simbolo  " +respuesta.group( ) +" no se acepta"
-
-                    elif tipo_componente is TipoComponente.ERRORENCAPSULACION :
-                        descripcion = ">>Error: No se aceptan caracteres después de simbolo  " +respuesta.group( ) +" en la misma linea"
+                    if tipo_componente is TipoComponente.ERROR_ENCAPSULACION:
+                        descripcion = "ERROR! No se aceptan caracteres despues del simbolo " + respuesta.group() + " en la misma linea"
 
                     elif tipo_componente is TipoComponente.ERROR:
                         if respuesta.end() == 0: posicionFinal += 1
                         descripcion = "Se detecto un error en  " +respuesta.group( ) +" CORREGIR"
 
                     # Si no coincide a un error y no es un blanco ni comentario, se manda a traer la descripcion de DescripcionComponente
-                    elif tipo_componente is not TipoComponente.BLANCOS and \
+                    elif tipo_componente is not TipoComponente.ESPACIO and \
                             tipo_componente is not TipoComponente.COMENTARIO:
                         descripcion = DescripcionComponente.evaluar_token(respuesta.group() ,tipo_componente)
 
                     # si la coincidencia corresponde a un BLANCO o un
                     # COMENTARIO se ignora por que no se ocupa
-                    if tipo_componente is not TipoComponente.BLANCOS and \
+                    if tipo_componente is not TipoComponente.ESPACIO and \
                             tipo_componente is not TipoComponente.COMENTARIO:
 
                         # Crea el componente léxico y lo guarda

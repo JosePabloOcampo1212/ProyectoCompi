@@ -1,4 +1,4 @@
-from explorador import TipoComponente
+from explorador.TipoComponente import TipoComponente
 
 
 class DescriptoresComponentes:
@@ -9,19 +9,17 @@ class DescriptoresComponentes:
         (TipoComponente.PALABRA_CLAVE, r'^(->|-->|{|}'),
         (TipoComponente.CONDICIONAL, r'^(\?|\?:|:)'),
         (TipoComponente.REPETICION, r'^(|\^)'),
-        (TipoComponente.OPERADOR, r'^(\+|-|\*|/)'),
+        (TipoComponente.OPERADOR_MATEMATICO, r'^(\+|-|\*|/)'),
         (TipoComponente.COMPARADOR, r'^(=|!=|<|>|<=|>=)'),
-        (TipoComponente.AMBIENTEESTANDAR, r'^(_|<<|\+\+)'),
+        (TipoComponente.AMBIENTE_ESTANDAR, r'^(_|<<|\+\+)'),
         (TipoComponente.VALOR_VERDAD, r'^(T|F)'),
         (TipoComponente.IDENTIFICADOR, r'^([a-z]([a-zA-Z0-9])*)'),
         (TipoComponente.FLOTANTE, r'^(-)?\d\.\d'),
         (TipoComponente.ENTERO, r'^(-)?\d+'),
-        (TipoComponente.ERRORENCAPSULACION, r'^((})[a-zA-Z- _/])'),
-        (TipoComponente.ERRORVARIABLE, r'^([:{}~!@%&|;?"]+)'),
-        (TipoComponente.ERRORFLOTANTE, r'^(\.[0-9])'),
+        (TipoComponente.ERROR_ENCAPSULACION, r'^((})[a-zA-Z- _/])'),
         (TipoComponente.ASIGNACION, r'^(>)'),
-        (TipoComponente.FUNCION, r'^(->)')
+        (TipoComponente.FUNCION, r'^(->)'),
         (TipoComponente.TEXTO, r'^(.)*'),
-        (TipoComponente.BLANCOS, r'^(\s)+'),
+        (TipoComponente.ESPACIO, r'^(\s)+'),
         (TipoComponente.ERROR, r'^(\s)*')
     ]
