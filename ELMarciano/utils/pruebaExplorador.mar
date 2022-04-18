@@ -1,12 +1,11 @@
 // Doble slash es un comentario
 // Este es el inicio del programa
-
-compare --> (a, b){
-	?(a > b){
+compare --> ( a , b ) {
+	? ( a > b ) {
 		>> "Mayor"
-	} ?:(a < b){
+	} ?: ( a < b ) {
 		>> "Menor"
-	}:{
+	} : {
 		>> "Son Iguales"
 	}
 }

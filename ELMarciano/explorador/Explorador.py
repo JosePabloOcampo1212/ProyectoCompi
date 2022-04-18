@@ -1,5 +1,4 @@
 import re
-
 from explorador.DescriptoresComponentes import DescriptoresComponentes
 from explorador.TipoComponente import TipoComponente
 from explorador.DescripcionComponente import DescripcionComponente
@@ -45,6 +44,9 @@ class Explorador:
             print(componente) # Esto funciona por que el print llama al
             # método __str__ de la instancia
 
+    def componentes_get(self):
+        return self.componentes
+
     def tiene_errores(self):
         ''' Funcion para determinar si el explorador detectó errores
             en el archivo.
@@ -71,7 +73,7 @@ class Explorador:
         # el error es referente a un parametro.
         '''
         componentes = []
-        tamanoLinea = len(linea)
+        tamanoLinea = len(linea) - 1
         posicionInicial = 0
         posicionFinal = 0
 
@@ -80,15 +82,18 @@ class Explorador:
             pos = linea[posicionFinal:]
             # Separa los descriptores de componente en dos variables
 
+
             for tipo_componente, regex in DescriptoresComponentes.descriptores_componentes:
 
                 # Trata de hacer match con el descriptor actual
+
+
                 respuesta = re.match(regex, pos)
+
                 # Si hay coincidencia se procede a generar el componente
                 # léxico final
-                if respuesta != None :
+                if respuesta is not None :
                     posicionFinal += respuesta.end()
-
                     descripcion = ""
 
                     # Se declara una descripcion para atributos adicionales y primero se compara con errores
@@ -114,7 +119,7 @@ class Explorador:
                         nuevo_componente = ComponenteLéxico(tipo_componente, respuesta.group() ,atributos_adicionales)
                         componentes.append(nuevo_componente)
 
-                    break;
+                    break
 
             posicionInicial = posicionFinal
         return componentes

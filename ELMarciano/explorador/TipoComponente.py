@@ -38,6 +38,7 @@ class TipoComponente(Enum):
     AMBIENTE_ESTANDAR = auto() #Convertir / Print / Concatenar / Ingresar ::= <<
     ERROR_ENCAPSULACION = auto()
     ESPACIO = auto()
+    CambioDeLinea = auto()
     
 """
     COMENTARIO = auto()

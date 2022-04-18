@@ -7,6 +7,8 @@ import argparse
 
 
 # - - - [ Parser ] - - -
+from utils.archivos import readText
+
 parser = argparse.ArgumentParser(description= 'Compilador Marciano')
 
 parser.add_argument('-explorar', dest='explorador', action='store_true', help='ejecuta el explorador y retorna los componentes lexicos')
@@ -19,14 +21,16 @@ def marciano():
 	args = parser.parse_args()
 
 	if args.explorador:
-		texto = utils.cargar_archivos(args.archivo)
-		exp = Explorador(texto)
+		archivo = open(args.archivo,"r")
+		exp = Explorador(archivo)
 		exp.explorar()
+		exp.imprimir_componentes()
+		# print(readText(archivo))
 
-		if exp.tiene_errores():
-			exp.imprimir_errores()
-		else:
-			exp.imprimir_componentes()
+		# if exp.tiene_errores():
+		# 	exp.imprimir_errores()
+		# else:
+		# 	exp.imprimir_componentes()
 
 if __name__ == '__main__':
 	marciano()

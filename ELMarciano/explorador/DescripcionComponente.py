@@ -34,8 +34,8 @@ class DescripcionComponente:
             '<<':'Entrada por medio de consola',
             '>>': 'Retorno un valor',
             '-->': 'Declara funcion.',
-            '{': 'Inicio de funcion.',
-            '}': 'Fin de la funcion.',
+            '{': 'Inicio de bloque.',
+            '}': 'Fin de la bloque.',
         }
         """
         Revisa que el token exista en la lista, en caso de ser variables o identificadores

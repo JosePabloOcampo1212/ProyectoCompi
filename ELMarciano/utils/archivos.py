@@ -1,4 +1,10 @@
-def cargar_archivos(ruta):
-	with open(ruta) as archivo:
-		for linea in archivo:
-			yield linea.strip("\n")
+
+
+def readText(lines):
+        arguments = []
+        for line in lines:
+            completeLine = line
+            temp = completeLine.split(' ')
+            arguments.append((temp))
+        return arguments
+

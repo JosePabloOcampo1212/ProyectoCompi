@@ -6,12 +6,12 @@ class DescriptoresComponentes:
     descriptores_componentes = [
         (TipoComponente.COMENTARIO, r'^//.*'),
         (TipoComponente.PUNTUACION, r'^([(),])'),
-        (TipoComponente.PALABRA_CLAVE, r'^(->|-->|{|}'),
+        (TipoComponente.PALABRA_CLAVE, r'^(->|-->|{|}|>>)'),
         (TipoComponente.CONDICIONAL, r'^(\?|\?:|:)'),
-        (TipoComponente.REPETICION, r'^(|\^)'),
+        (TipoComponente.REPETICION, r'^(\^)'),
         (TipoComponente.OPERADOR_MATEMATICO, r'^(\+|-|\*|/)'),
         (TipoComponente.COMPARADOR, r'^(=|!=|<|>|<=|>=)'),
-        (TipoComponente.AMBIENTE_ESTANDAR, r'^(_|<<|\+\+)'),
+        (TipoComponente.AMBIENTE_ESTANDAR, r'^(_|\+\+)'),
         (TipoComponente.VALOR_VERDAD, r'^(T|F)'),
         (TipoComponente.IDENTIFICADOR, r'^([a-z]([a-zA-Z0-9])*)'),
         (TipoComponente.FLOTANTE, r'^(-)?\d\.\d'),
@@ -19,7 +19,7 @@ class DescriptoresComponentes:
         (TipoComponente.ERROR_ENCAPSULACION, r'^((})[a-zA-Z- _/])'),
         (TipoComponente.ASIGNACION, r'^(>)'),
         (TipoComponente.FUNCION, r'^(->)'),
-        (TipoComponente.TEXTO, r'^(.)*'),
         (TipoComponente.ESPACIO, r'^(\s)+'),
+        (TipoComponente.TEXTO, r'^(.)*'),
         (TipoComponente.ERROR, r'^(\s)*')
     ]
