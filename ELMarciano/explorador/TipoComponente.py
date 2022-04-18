@@ -39,7 +39,8 @@ class TipoComponente(Enum):
     ERROR_ENCAPSULACION = auto()
     ESPACIO = auto()
     CambioDeLinea = auto()
-    
+    ERRORVARIABLE =auto()
+    ERRORFLOTANTE = auto()
 """
     COMENTARIO = auto()
     PALABRA_CLAVE = auto()

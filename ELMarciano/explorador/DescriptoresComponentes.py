@@ -17,6 +17,8 @@ class DescriptoresComponentes:
         (TipoComponente.FLOTANTE, r'^(-)?\d\.\d'),
         (TipoComponente.ENTERO, r'^(-)?\d+'),
         (TipoComponente.ERROR_ENCAPSULACION, r'^((})[a-zA-Z- _/])'),
+        (TipoComponente.ERRORVARIABLE, r'^([:{}~!@%&|;?"]+)'),
+        (TipoComponente.ERRORFLOTANTE, r'^(\.[0-9])'),
         (TipoComponente.ASIGNACION, r'^(>)'),
         (TipoComponente.FUNCION, r'^(->)'),
         (TipoComponente.ESPACIO, r'^(\s)+'),
