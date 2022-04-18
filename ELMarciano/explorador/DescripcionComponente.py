@@ -2,11 +2,8 @@ from explorador.TipoComponente import TipoComponente
 
 
 class DescripcionComponente:
-    """
-    Clase que funciona como diccionario para dar una descripcion a cada lexema
+    # Clase que funciona como diccionario para dar una descripcion a cada lexema
 
-    Algunos tipos de lexema que pueden ser muy distintos entre si mismos se les da una descripcion generica, mientras que los que siempre son iguales uno especifico
-    """
     def evaluar_token(mitoken, componente):
         AtributosComponente = {
 
@@ -38,9 +35,14 @@ class DescripcionComponente:
             '}': 'Fin de la bloque.',
         }
         """
-        Revisa que el token exista en la lista, en caso de ser variables o identificadores
-        retorna el mismo mensaje.
+        Revisa que el token con el lexema exista dentro del diccionario establecido
+
+        Si no esta dentro del diccionario, se le da una descripcion adicional y especifica
+        para cada caso de lexema del que se trate
+
+        En caso de ser un identificador o variable devuelve un mensaje que lo aclara
         """
+        
         if mitoken not in AtributosComponente:
             if componente is TipoComponente.IDENTIFICADOR:
                 return 'Esto es un identificador'
@@ -53,6 +55,9 @@ class DescripcionComponente:
             if componente is TipoComponente.FLOTANTE:
                 return 'Esto es un flotante'
             return 'Identificadores o variables'
-        # si el token si existe, busco y traigo el atributo.
+
+        # Si el token existe dentro del diccionario con los lexemas,
+        # se retorna el atributo.
+        
         else:
             return AtributosComponente.get(mitoken)

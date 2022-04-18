@@ -29,5 +29,6 @@ def marciano():
 		else:
 			exp.imprimir_componentes()
 
+# Llamada al programa
 if __name__ == '__main__':
 	marciano()
