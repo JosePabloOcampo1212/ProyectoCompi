@@ -13,7 +13,7 @@ parser = argparse.ArgumentParser(description= 'Compilador Marciano')
 
 parser.add_argument('-explorar', dest='explorador', action='store_true', help='ejecuta el explorador y retorna los componentes lexicos')
 
-parser.add_argument('-analizar', dest='analizador', action='store_true', help='ejecuta el analizador y retorna como un AST o algo asi')
+parser.add_argument('-analizar', dest='analizador', action='store_true', help='ejecuta el analizador y hace algo')
 
 parser.add_argument('archivo', help='Archivo con el codigo fuente')
 
@@ -32,7 +32,7 @@ def marciano():
 			exp.imprimir_componentes()
 
 	elif args.analizador:
-		print('SE EJECUTA EL ANALIZADOR!')
+		print('SE ESTA EJECUTANDO EL ANALIZADOR')
 
 # Llamada al programa
 if __name__ == '__main__':
